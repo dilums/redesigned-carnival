@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg nav-style" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="#" >{{ site.title}} {{ page.title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      abv
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        {% for item in site.data.navigation %}
+        <li class="nav-item">
+          <a class="nav-link{% if page.url == item.link %} current{% endif %}" href="{{ item.link | relative_url }}">{{ item.name }}<span class="sr-only">(current)</span></a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
